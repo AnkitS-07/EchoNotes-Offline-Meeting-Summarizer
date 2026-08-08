@@ -63,13 +63,3 @@ meeting-summarizer/
 ├── requirements.txt
 └── README.md
 ```
-
-## Notes for Customization
-
-- Swap the Whisper model size in `transcriber.py` (`tiny`/`base`/`small`/`medium`/`large-v3`)
-  for a speed/accuracy tradeoff.
-- Swap the Ollama model in `summarizer.py` (`MODEL_NAME`) for any model
-  you've pulled locally.
-- The LLM is prompted to return strict JSON — if you want richer notes
-  (e.g. attendee list, topics discussed), just extend the prompt template
-  and the JSON schema in `summarizer.py`.
