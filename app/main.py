@@ -45,6 +45,10 @@ async def process_audio(file: UploadFile = File(...)):
     file_path = os.path.join(UPLOAD_DIR, file.filename)
     with open(file_path, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
+        
+ """ file_path = os.path.join(UPLOAD_DIR, file.filename)
+with open(file_path, "wb") as buffer:
+    buffer.write(await file.read()) """
 
     # 2. Transcribe locally with faster-whisper
     transcript = transcriber.transcribe(file_path)
